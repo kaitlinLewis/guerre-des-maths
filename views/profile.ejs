@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dracula" class="dark">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guerre des maths</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-
-<body>
+<%- include("partials/header") -%>
     <div>
         <h2>Add a post</h2>
         <form action="/problems/createProblems" enctype="multipart/form-data" method="post">
@@ -23,7 +11,4 @@
             <button type="submit" value="Upload">Posez le problème(submit)</button>
         </form>
     </div>
-
-</body>
-
-</html>
+    <%- include("partials/footer") -%>
