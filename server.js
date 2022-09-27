@@ -38,7 +38,7 @@ app.use(logger("dev"));
 //Setup sessions - stored in MongoDB
 app.use(
   session({
-    secret: "keyboard cat",
+    secret: "secretsdontmakefriends",
     resave: false,
     saveUninitialized: false,
     store: new MongoStore({ mongooseConnection: mongoose.connection }),

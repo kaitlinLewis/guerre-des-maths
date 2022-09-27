@@ -59,7 +59,7 @@ module.exports = {
   deleteProblem: async (req, res) => {
     try {
       //Find problem by id
-      let problem = await problem.findById({ _id: req.params.id });
+      let problem = await Problem.findById({ _id: req.params.id });
       //Delete from cloudinary
       await cloudinary.uploader.destroy(problem.cloudinaryId);
       //Delete problem from db
