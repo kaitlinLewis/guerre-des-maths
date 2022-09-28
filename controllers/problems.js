@@ -32,9 +32,10 @@ module.exports = {
 
       await Problem.create({
         title: req.body.title,
-        image: res.secure_url,
-        cloudinaryId: res.public_id,
+        image: result.secure_url,
+        cloudinaryId: result.public_id,
         problem: req.body.problem,
+        answer: req.body.answer,
         likes: 0,
         user: req.user.id,
       });
