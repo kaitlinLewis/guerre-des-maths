@@ -1,19 +1,20 @@
 <%- include("partials/header") -%>
     <h2>
-        <%= problem.title</h2>
-            <img src="<%= post.image%>" />
-            <form action="post/likePost/<%= post.id %>?_method=PUT" method="POST"><button
-                    class="fa-light fa-square-heart" type="submit"></button></form>
-            <h3>Likes: <%problem.likes %>
-            </h3>
-            <%if(problem.user==user.id){ %>
-                <form action="/problem/deleteProblem/<%= problem.id %>?_method=DELETE" method="POST" class="col-3">
-                    <button class="btn btn-primary fa-regular fa-trash" type="submit"></button>
-                </form>
-                <%}%>
-                    <p>
-                        <%= problem.caption %>
-                    </p>
-                    <a href="/profile">Return to Profile</a>
-                    <a href="/feed">Solve more problems</a>
-                    <%- include("partials/footer") -%>
+        <%= problem.title %>
+    </h2>
+    <img src="<%= problem.image%>" />
+    <form action="problems/likePost/<%= problem.id %>?_method=PUT" method="POST"><button
+            class="fa-light fa-square-heart" type="submit"></button></form>
+    <h3>Likes: <%problem.likes %>
+    </h3>
+    <%if(problem.user==user.id){ %>
+        <form action="/problems/deleteProblem/<%= problem.id %>?_method=DELETE" method="POST" class="col-3">
+            <button class="btn btn-primary fa-regular fa-trash" type="submit"></button>
+        </form>
+        <%}%>
+            <p>
+                <%= problem.caption %>
+            </p>
+            <a href="/profile">Return to Profile</a>
+            <a href="/feed">Solve more problems</a>
+            <%- include("partials/footer") -%>
