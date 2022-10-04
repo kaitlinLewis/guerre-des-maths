@@ -9,7 +9,7 @@ module.exports = {
         author: req.user.id,
       });
       console.log("Solution has been added");
-      res.redirect("/post/" + req.params.id);
+      res.redirect("/solution/" + req.params.id);
     } catch (err) {
       console.log(err);
     }
