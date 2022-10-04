@@ -7,14 +7,26 @@
             class="fa-light fa-square-heart" type="submit"></button></form>
     <h3>Likes: <%problem.likes %>
     </h3>
+
     <%if(problem.user==user.id){ %>
         <form action="/problems/deleteProblem/<%= problem.id %>?_method=DELETE" method="POST" class="col-3">
             <button class="btn btn-primary fa-regular fa-trash" type="submit"></button>
         </form>
         <%}%>
+
             <p>
                 <%= problem.caption %>
             </p>
+
+            <ul>
+                <% for(var i; i < solutions.length; i++){%>
+
+                    }
+                    <li>
+                        <%=solutions[i].solution%> <a href=""> -<%= users[i].userName%></a>
+                    </li>
+                    <% } %>
+            </ul>
             <a href="/profile">Return to Profile</a>
             <a href="/feed">Solve more problems</a>
             <%- include("partials/footer") -%>

@@ -20,16 +20,19 @@
                             <label for="problem" class="label">
                                 <span class="label-text">Le problème (the problem to solve)</span>
                             </label>
-                            <textarea type="text" name="problem" id="problem" placeholder="le problème"
-                                class="input input-bordered"></textarea>
-
+                            <textarea name="problem" id="problem" class="textarea textarea-bordered h-24"
+                                placeholder="Le problème"></textarea>
                         </div>
+
                         <div class="form-control">
-                            <label for="imgUpload" class="label">
+                            <label for="imgUpload"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                                 <span class="label-text">L'image (image to visualize the problem)</span>
                             </label>
-                            <input type="file" name="file" id="imgUpload" class="input input-bordered" />
+                            <input type="file" name="file" id="imgUpload"
+                                class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" />
                         </div>
+
                         <div class="form-control">
                             <label for="answer" class="label">
                                 <span class="label-text">La réponse (the answer)</span>
@@ -38,7 +41,7 @@
                                 class="input input-bordered" />
                         </div>
                         <div class="form-control mt-6">
-                            <button type="submit" class="btn btn-primary" value="Upload">Posez le problème</button>
+                            <button class="btn btn-primary" value="Upload">Posez le problème</button>
                         </div>
                     </form>
                 </div>
