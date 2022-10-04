@@ -11,7 +11,7 @@ const SolutionSchema = new mongoose.Schema({
   },
   author: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "USer",
+    ref: "User",
   },
   createdAt: {
     type: Date,
