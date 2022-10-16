@@ -1,11 +1,26 @@
 <%- include("partials/header") -%>
+
+
     <ul>
-        <% for(var i=0; i < problems.length; i++) { %>
+        <% for(let i=0; i<problems.length; i++) { %>
             <li>
-                <a href="/problem/<%= problems[i]._id%>">
-                    <img src="<%= problems[i].image %>">
-                </a>
+                <div class="card w-96 bg-accent-focus shadow-xl">
+                    <figure><a href="/problems/<%=problems[i]._id%>"><img src="<%= problems[i].image%>" alt="" /></a>
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            <%= problems[i].title %>
+                        </h2>
+
+                        <div class="card-actions justify-start">
+                            <!--<div class="badge badge-outline">STRAND GOES HERE</div>
+                            <div class="badge badge-outline">GRADE LEVEL GOES HERE</div>-->
+                            <a href="/problems/<%=problems[i]._id%>" class="btn btn-outline">Essayez-le!</a>
+                        </div>
+                    </div>
+                </div>
             </li>
-            <% } %>
+            <%} %>
     </ul>
+
     <%- include("partials/footer") -%>

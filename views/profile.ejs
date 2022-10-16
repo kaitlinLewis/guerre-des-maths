@@ -5,6 +5,8 @@
             <div class="text-center lg:text-left">
                 <h1 class="text-5xl font-bold">Posez un problème</h1>
                 <p class="py-6">Post your math problem for others to solve</p>
+                <a role="button" class="btn btn-secondary btn-xs sm:btn-sm md:btn-md lg:btn-lg" href="/feed">Solve All
+                    Problems</a>
             </div>
             <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                 <div class="card-body">
@@ -32,7 +34,29 @@
                             <input type="file" name="file" id="imgUpload"
                                 class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" />
                         </div>
-
+                        <!--<div class="form-control">
+                            <p>What topic does your math problem cover?</p>
+                            <label class="label cursor-pointer">
+                                <span class="label-text">Number</span>
+                                <input type="checkbox" checked="checked" class="checkbox" />
+                            </label>
+                            <label class="label cursor-pointer">
+                                <span class="label-text">Algebra</span>
+                                <input type="checkbox" checked="checked" class="checkbox" />
+                            </label>
+                            <label class="label cursor-pointer">
+                                <span class="label-text">Data</span>
+                                <input type="checkbox" checked="checked" class="checkbox" />
+                            </label>
+                            <label class="label cursor-pointer">
+                                <span class="label-text">Spatial Sense</span>
+                                <input type="checkbox" checked="checked" class="checkbox" />
+                            </label>
+                            <label class="label cursor-pointer">
+                                <span class="label-text">Financial Literacy</span>
+                                <input type="checkbox" checked="checked" class="checkbox" />
+                            </label>
+                        </div>-->
                         <div class="form-control">
                             <label for="answer" class="label">
                                 <span class="label-text">La réponse (the answer)</span>
@@ -50,19 +74,29 @@
     </div>
 
 
-    <div class="hidden sm:block" aria-hidden="true">
-        <div class="py-5">
-            <div class="border-t border-gray-200"></div>
-        </div>
-    </div>
+
+
     <ul>
         <% for(let i=0; i<problems.length; i++) { %>
             <li>
-                <a href="/problems/<%=problems[i]._id%>">
-                    <img src="<%= problems[i].image%>">
-                </a>
+                <div class="card w-96 bg-accent-focus shadow-xl">
+                    <figure><a href="/problems/<%=problems[i]._id%>"><img src="<%= problems[i].image%>" alt="" /></a>
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            <%= problems[i].title %>
+                        </h2>
+
+                        <div class="card-actions justify-start">
+                            <!--<div class="badge badge-outline">STRAND GOES HERE</div>
+                            <div class="badge badge-outline">GRADE LEVEL GOES HERE</div>-->
+                            <a href="/problems/<%=problems[i]._id%>" class="btn btn-outline">Essayez-le!</a>
+                        </div>
+                    </div>
+                </div>
             </li>
             <%} %>
     </ul>
-    <a href="/feed">Solve All Problems</a>
+
+
     <%- include("partials/footer") -%>
