@@ -1,12 +1,11 @@
 <%- include("partials/header") -%>
 
-    <div class="hero min-h-screen bg-base-200">
-        <div class="hero-content flex-col lg:flex-row-reverse">
-            <div class="text-center lg:text-left">
+    <div class="hero min-h-screen">
+        <div class="hero-content flex-wrap lg:flex-row-reverse">
+            <div class="text-center">
                 <h1 class="text-5xl font-bold">Posez un problème</h1>
                 <p class="py-6">Post your math problem for others to solve</p>
-                <a role="button" class="btn btn-secondary btn-xs sm:btn-sm md:btn-md lg:btn-lg" href="/feed">Solve All
-                    Problems</a>
+
             </div>
             <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                 <div class="card-body">
@@ -75,28 +74,43 @@
 
 
 
+    <section>
+        <div class="flex flex-col w-full">
+            <div class="grid h-auto card bg-base-100 rounded-box place-items-center">
+                <h2 class="font-medium leading-tight text-4xl mt-0 mb-2"> Vos problèmes des mots </h2>
+                <a role="button" class="btn btn-secondary btn-xs sm:btn-sm md:btn-md lg:btn-lg" href="/feed">Solve All
+                    Problems</a>
+            </div>
+            <div class="divider"></div>
+            <div class="grid h-auto card bg-base-100 rounded-box place-items-center">
+                <ul>
+                    <% for(let i=0; i<problems.length; i++) { %>
+                        <li>
+                            <div class="card w-96 bg-accent-focus shadow-xl">
+                                <figure><a href="/problems/<%=problems[i]._id%>"><img src="<%= problems[i].image%>"
+                                            alt="" /></a>
+                                </figure>
+                                <div class="card-body">
+                                    <h2 class="card-title">
+                                        <%= problems[i].title %>
+                                    </h2>
 
-    <ul>
-        <% for(let i=0; i<problems.length; i++) { %>
-            <li>
-                <div class="card w-96 bg-accent-focus shadow-xl">
-                    <figure><a href="/problems/<%=problems[i]._id%>"><img src="<%= problems[i].image%>" alt="" /></a>
-                    </figure>
-                    <div class="card-body">
-                        <h2 class="card-title">
-                            <%= problems[i].title %>
-                        </h2>
+                                    <div class="card-actions justify-start">
+                                        <!--<div class="badge badge-outline">STRAND GOES HERE</div>
+                                        <div class="badge badge-outline">GRADE LEVEL GOES HERE</div>-->
+                                        <a href="/problems/<%=problems[i]._id%>" class="btn btn-outline">Essayez-le!</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <%} %>
+                </ul>
+            </div>
+        </div>
 
-                        <div class="card-actions justify-start">
-                            <!--<div class="badge badge-outline">STRAND GOES HERE</div>
-                            <div class="badge badge-outline">GRADE LEVEL GOES HERE</div>-->
-                            <a href="/problems/<%=problems[i]._id%>" class="btn btn-outline">Essayez-le!</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <%} %>
-    </ul>
+
+    </section>
+
 
 
     <%- include("partials/footer") -%>
